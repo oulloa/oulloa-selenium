@@ -2,13 +2,12 @@ package com.rentameloPageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
-	
+public class CreateArticlePage {
 	private final WebDriver driver;
 	
-	public LoginPage(WebDriver driver){
+	public CreateArticlePage(WebDriver driver)
+	{
 		this.driver = driver;
 	}
-	
 	
 }

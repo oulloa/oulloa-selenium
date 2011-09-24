@@ -1,6 +1,7 @@
 package com.rentameloPageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
@@ -11,7 +12,7 @@ public class HomePage {
 		this.driver = driver;
 		
 		if(!driver.getTitle().contains("Bienvenido"))
-			driver.navigate().to("/");
+			  throw new IllegalStateException("Wrong Page");
 			
 	}
 	
@@ -25,8 +26,15 @@ public class HomePage {
 		return new LoginPage(driver);
 	}
 	
-	public SearchPage searchFor(String SearchString){
-		driver.findElement(By.linkText("Crear articulo")).click();
+	public CreateArticlePage clickOnNewArticle(){
+		driver.findElement(By.linkText("Crear Articulo")).click();
+		return new CreateArticlePage(driver);
+	}
+	
+	public SearchPage searchFor(String SearchQuery){
+		WebElement searchBar = driver.findElement(By.name("q"));
+		searchBar.sendKeys(SearchQuery);
+		searchBar.submit();
 		return new SearchPage(driver);
 	}
 	
