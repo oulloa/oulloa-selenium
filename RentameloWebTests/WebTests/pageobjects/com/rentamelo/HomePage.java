@@ -1,4 +1,4 @@
-package com.rentameloPageObjects;
+package com.rentamelo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

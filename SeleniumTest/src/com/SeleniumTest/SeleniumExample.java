@@ -27,6 +27,7 @@ public class SeleniumExample  {
         System.out.println(driver.getTitle());
         driver.findElement(By.name("j_username")).sendKeys("admin");
         driver.findElement(By.name("j_password")).sendKeys("admin");
+        driver.findElement(By.name("_spring_security_remember_me")).click();
         driver.findElement(By.name("j_password")).submit();
         System.out.println(driver.getTitle());
         //driver.findElement(By.linkText("log out")).click();
