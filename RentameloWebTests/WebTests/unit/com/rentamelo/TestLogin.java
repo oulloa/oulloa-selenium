@@ -2,6 +2,8 @@ package com.rentamelo;
 
 import static org.junit.Assert.*;
 import com.rentamelo.LoginPage;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.*;
 
@@ -17,6 +19,7 @@ public class TestLogin {
 	@Test
 	public void TestProperLogin(){
 		LoginPage loginpage = new LoginPage(new FirefoxDriver());
+		
 		
 	}
 	
