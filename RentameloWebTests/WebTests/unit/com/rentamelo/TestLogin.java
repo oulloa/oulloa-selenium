@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.*;
 
 import org.junit.Test;
+import org.junit.Before;
+import org.junit.After;
 
 public class TestLogin {
 
@@ -16,11 +18,21 @@ public class TestLogin {
 		fail("Not yet implemented");
 	}*/
 	
-	@Test
-	public void TestProperLogin(){
-		LoginPage loginpage = new LoginPage(new FirefoxDriver());
-		
+	private LoginPage page;
+	
+	@Before
+	public void openBrowser(){
+		page = new LoginPage(new FirefoxDriver());
 		
 	}
 	
+	@Test
+	public void TestProperLogin(){	
+		page.loginAs("admin", "admin", true);
+	}
+	
+	@After
+	public void closeBrowser(){
+		
+	}
 }

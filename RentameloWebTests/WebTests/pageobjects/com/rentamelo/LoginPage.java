@@ -11,13 +11,23 @@ public class LoginPage {
 		this.driver = driver;
 	}
 	
-	public HomePage loginAs(String username, String password, boolean rememberMe)
+	public void loginAs(String username, String password, boolean rememberMe)
 	{
-		driver.navigate().to("http://rentamelo-app.cloudfoundry.com/login/auth");
+		//driver.navigate().to("http://rentamelo-app.cloudfoundry.com/login/auth");
 		driver.findElement(By.name("j_username")).sendKeys(username);
         driver.findElement(By.name("j_password")).sendKeys(password);
         driver.findElement(By.name("_spring_security_remember_me")).click();
-		return new HomePage(driver);
+		//return new HomePage(driver);
+	}
+	
+	public void open(String url){
+		driver.get(url);
+	}
+	public void close(){
+		driver.quit();
+	}
+	public String getTitle(){
+		return driver.getTitle();
 	}
 	
 }
